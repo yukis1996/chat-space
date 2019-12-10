@@ -2,11 +2,11 @@
   .side-ber__user-name
     .side-ber__user-name__item
       .side-ber__user-name__item__name
-        名前
+        = current_user.name
       .side-ber__user-name__item__icom
         = link_to "#", class: "top-item-icon" do
           = icon("fa","edit",class: "item__btn--icon")
-        = link_to "#", class: "top-item-icon" do
+        = link_to edit_user_path(current_user), class: "top-item-icon" do
           = icon("fa","cog",class: "item__btn--icon")
   .side-ber__group
     .side-ber__group__list
