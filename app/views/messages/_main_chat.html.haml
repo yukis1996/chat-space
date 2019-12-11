@@ -25,12 +25,11 @@
       .chat-main__message-list__box__word
         おはよう
   .chat-main__message-from
-    .chat-main__message-from__word
-      .chat-main__message-from__word__text
-        type a message
-      .chat-main__message-from__word__photo
-        %label{class: "icon-box"}
-          = icon("fa","image")
-          %input#filesend{type: "file"}
-    .chat-main__message-from__btn
-      Send
+    = form_for [@group, @message] do |f|
+      .chat-main__message-from__group
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
