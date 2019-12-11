@@ -1,0 +1,18 @@
+.side-ber
+  .side-ber__user-name
+    .side-ber__user-name__item
+      .side-ber__user-name__item__name
+        = current_user.name
+      .side-ber__user-name__item__icom
+        = link_to new_group_path, class: "top-item-icon" do
+          = icon("fa","edit",class: "item__btn--icon")
+        = link_to "/groups/1/edit", class: "top-item-icon" do
+          = icon("fa","cog",class: "item__btn--icon")
+  .side-ber__group
+    - current_user.groups.each do |group|
+      .side-ber__group__list
+        = link_to group_messages_path(group) do
+          .side-ber__group__list__name 
+            = group.name
+          .side-ber__group__list__word 
+            メッセージはまだありません。
