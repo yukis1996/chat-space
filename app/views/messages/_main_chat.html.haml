@@ -10,20 +10,22 @@
         .chat-main__group-info__edit__btn
           Edit
   .chat-main__message-list
-    .chat-main__message-list__box
-      .chat-main__message-list__box__name
-        Masa
-      .chat-main__message-list__box__day
-        2019/11/20(wed)17:34:56
-      .chat-main__message-list__box__word
-        おはよう
-    .chat-main__message-list__box
-      .chat-main__message-list__box__name
-        Masa
-      .chat-main__message-list__box__day
-        2019/11/20(wed)17:34:56
-      .chat-main__message-list__box__word
-        おはよう
+    .messages
+      = render @messages
+  -#   .chat-main__message-list__box
+  -#     .chat-main__message-list__box__name
+  -#       Masa
+  -#     .chat-main__message-list__box__day
+  -#       2019/11/20(wed)17:34:56
+  -#     .chat-main__message-list__box__word
+  -#       おはよう
+    -# .chat-main__message-list__box
+    -#   .chat-main__message-list__box__name
+    -#     Masa
+    -#   .chat-main__message-list__box__day
+    -#     2019/11/20(wed)17:34:56
+    -#   .chat-main__message-list__box__word
+    -#     おはよう
   .chat-main__message-from
     = form_for [@group, @message] do |f|
       .chat-main__message-from__group
