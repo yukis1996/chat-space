@@ -2,30 +2,17 @@
   .chat-main__group-info
     .chat-main__group-info__item
       .chat-main__group-info__item__center
-        test
+        = @group.name
       .chat-main__group-info__item__bottom
-        Member:Masa
+        - @group.users.each do |group|
+          = group.name
     .chat-main__group-info__edit
-      = link_to "#", class: "edit-btn__link" do
+      = link_to edit_group_path(current_user), class: "edit-btn__link" do
         .chat-main__group-info__edit__btn
           Edit
   .chat-main__message-list
     .messages
       = render @messages
-  -#   .chat-main__message-list__box
-  -#     .chat-main__message-list__box__name
-  -#       Masa
-  -#     .chat-main__message-list__box__day
-  -#       2019/11/20(wed)17:34:56
-  -#     .chat-main__message-list__box__word
-  -#       おはよう
-    -# .chat-main__message-list__box
-    -#   .chat-main__message-list__box__name
-    -#     Masa
-    -#   .chat-main__message-list__box__day
-    -#     2019/11/20(wed)17:34:56
-    -#   .chat-main__message-list__box__word
-    -#     おはよう
   .chat-main__message-from
     = form_for [@group, @message] do |f|
       .chat-main__message-from__group
