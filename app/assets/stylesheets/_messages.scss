@@ -95,13 +95,14 @@
       }
     }
   }
-  &__message-list {
+  .chat-main__message-list {
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    padding: 35px 0 0 40px;
-    &__box {
-      height: 92px;
-      &__name {
+    padding: 46px 0 0 40px;
+    overflow: scroll;
+    .upper-message {
+
+      &__user-name {
         height: 20px;
         float: left;
         font-size: 16px;
@@ -109,18 +110,18 @@
         padding-right: 10px;
         color: #333333;
       }
-      &__day {
+      &__date {
         height: 20px;
         font-size: 12px;
         line-height: 12px;
         margin-bottom: 12px;
         color: #999999;
       }
-      &__word {
-        font-size: 14px;
-        margin-bottom: 46px;
-        color: #434A54;
-      }
+    }
+    .lower-message {
+      font-size: 14px;
+      margin-bottom: 46px;
+      color: #434A54;
     }
   }
   &__message-from {
@@ -128,31 +129,27 @@
     background-color: #d2d2d2;
     padding: 20px 40px;
     display: flex;
-    justify-content: space-between;
-    &__word {
-      background-color: white;
+    &__group {
       height: 50px;
       width: 100%;
-      border: 1px solid;
-      border-color: black;
-      padding: 0 10px;
       display: flex;
-      justify-content: space-between;  
       position: relative;
-      &__text {
+      .form__message {
+        padding: 0 40px 0 10px;
         width: 100%;
-        height: 50px;
-        line-height: 50px;
-        color: #999999;
+        display: block;
       }
-      &__photo {
-        width: 100px;
-        height: 50px;
+      .form__mask {
         line-height: 50px;
-        text-align: right;
+        display: block;
+        position: absolute;
+        right: 10px;
       }
     }
-    &__btn {
+  }
+}
+
+    .form__submit {
       background-color: #38aef0;
       height: 50px;
       width: 100px;
@@ -162,9 +159,6 @@
       color: white;
       text-align: center;
     }
-  }
-}
-
 .item__btn--icon {
   color: white;
   padding-left: 5px;
@@ -185,4 +179,13 @@
 .link-group {
   color: #ffffff;
   text-decoration: none;
+}
+
+.new_message {
+  display: flex;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
 }
