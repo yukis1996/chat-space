@@ -4,6 +4,7 @@
       .chat-main__group-info__item__center
         = @group.name
       .chat-main__group-info__item__bottom
+        Member:
         - @group.users.each do |group|
           = group.name
     .chat-main__group-info__edit
