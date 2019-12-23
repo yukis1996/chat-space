@@ -14,10 +14,10 @@ $(function() {
                     <div class="lower-message">
                       <p class="lower-message__content">
                         ${message.content}
+                        <img src=${message.image} >
                       </p>
                     </div>
-                      <img src=${message.image} >
-                    </div>`
+                  </div>`
         return html;
       } else {
       var html = `<div class="message" data-message-id=${message.id}>
@@ -77,8 +77,8 @@ $(function() {
         messages.forEach(function (message) {
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         })
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
       .fail(function() {
         alert('自動更新に失敗しました');
